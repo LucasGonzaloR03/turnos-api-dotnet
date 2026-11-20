@@ -265,3 +265,9 @@ Los tests no necesitan secretos ni base de datos, así que el workflow es autoco
 - [x] Etapa 6 — Swagger, README, CI, Docker, `/health`, deploy en Render y CI en verde
 
 El commit `a82ebc5` está pusheado a `main` y el deploy en Render está funcionando. Los 21 tests unitarios y el `docker build` pasan en GitHub Actions.
+
+---
+
+## Licencia
+
+MIT — ver [LICENSE](LICENSE).
