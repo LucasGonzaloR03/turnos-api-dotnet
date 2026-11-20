@@ -211,6 +211,26 @@ Si preferís configurar a mano: **New + → Web Service**, Language `Docker`, Do
 
 > En el plan free el servicio se duerme cuando no recibe tráfico; el primer request después de un rato puede tardar unos segundos.
 
+### Deploy actual y verificación
+
+La API está desplegada y funcionando en:
+
+**https://turnos-api-dotnet.onrender.com/swagger/index.html**
+
+Chequeos realizados contra el deploy:
+
+| Prueba | Resultado |
+|---|---|
+| `GET /health` | `200` |
+| `GET /swagger/index.html` y `/swagger/v1/swagger.json` | `200` (18 rutas documentadas) |
+| `POST /auth/login` | `200`, devuelve token JWT |
+| `GET /profesionales`, `/servicios`, `/turnos/mios` con token | `200` con datos de Neon |
+| Endpoint protegido sin token | `401` |
+| Request inválido | `400` `problem+json` con `errors` |
+| GitHub Actions (tests + `docker build`) | ambos jobs en verde |
+
+> **Trampa con la connection string:** en Render el valor va **sin comillas** y el nombre con doble guion bajo (`ConnectionStrings__DefaultConnection`). Las comillas que se ven en `secrets.json` son sintaxis del JSON, no parte del valor: si se copian, Npgsql falla con `Format of the initialization string does not conform to specification...`. Tampoco sirve el formato URI `postgres://...`: Npgsql 10 necesita `Host=...;Password=...;`.
+
 ### Variables de entorno
 
 | Variable | Origen | Descripción |
@@ -242,6 +262,6 @@ Los tests no necesitan secretos ni base de datos, así que el workflow es autoco
 - [x] Etapa 3 — administración de profesionales, servicios y horarios
 - [x] Etapa 4 — turnos, disponibilidad y concurrencia
 - [x] Etapa 5 — tests, validaciones y manejo de errores
-- [x] Etapa 6 — Swagger, README, CI, Docker, `/health` y configuración de Render
+- [x] Etapa 6 — Swagger, README, CI, Docker, `/health`, deploy en Render y CI en verde
 
-El deploy real en Render no se ejecutó desde esta máquina: quedó todo preparado para hacerse desde el dashboard. Tampoco se hicieron commits ni pushes.
+El commit `a82ebc5` está pusheado a `main` y el deploy en Render está funcionando. Los 21 tests unitarios y el `docker build` pasan en GitHub Actions.
