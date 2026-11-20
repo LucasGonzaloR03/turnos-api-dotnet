@@ -1,0 +1,15 @@
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\bin\Debug\net10.0\Turnos.Application.deps.json
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\bin\Debug\net10.0\Turnos.Application.dll
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\bin\Debug\net10.0\Turnos.Application.pdb
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\bin\Debug\net10.0\Turnos.Domain.dll
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\bin\Debug\net10.0\Turnos.Domain.pdb
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\Turnos.Application.csproj.AssemblyReference.cache
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\Turnos.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\Turnos.Application.AssemblyInfoInputs.cache
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\Turnos.Application.AssemblyInfo.cs
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\Turnos.Application.csproj.CoreCompileInputs.cache
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\Turnos.A.FE7751F2.Up2Date
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\Turnos.Application.dll
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\refint\Turnos.Application.dll
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\Turnos.Application.pdb
+C:\Users\rustt\Desktop\Proyectos-Propios\Programa de turnos\src\Turnos.Application\obj\Debug\net10.0\ref\Turnos.Application.dll
