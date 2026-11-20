@@ -1,4 +1,5 @@
 using Turnos.Application.Dtos;
+using Turnos.Application.Exceptions;
 using Turnos.Application.Interfaces;
 using Turnos.Domain.Entities;
 
@@ -34,13 +35,13 @@ public class AuthService(
     public async Task<AuthResponse> LoginAsync(LoginRequest request, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
-            throw new UnauthorizedAccessException("Credenciales inválidas.");
+            throw new CredencialesInvalidasException();
 
         var email = request.Email.Trim().ToLowerInvariant();
         var usuario = await usuarioRepository.ObtenerPorEmailAsync(email, cancellationToken);
 
         if (usuario is null || !passwordHasher.Verificar(request.Password, usuario.PasswordHash))
-            throw new UnauthorizedAccessException("Credenciales inválidas.");
+            throw new CredencialesInvalidasException();
 
         return ArmarRespuesta(usuario);
     }

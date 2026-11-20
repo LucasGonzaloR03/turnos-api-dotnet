@@ -7,4 +7,6 @@ public class Usuario
     public string Email { get; set; } = string.Empty;
     public string PasswordHash { get; set; } = string.Empty;
     public RolUsuario Rol { get; set; } = RolUsuario.Cliente;
+
+    public ICollection<Turno> Turnos { get; set; } = new List<Turno>();
 }

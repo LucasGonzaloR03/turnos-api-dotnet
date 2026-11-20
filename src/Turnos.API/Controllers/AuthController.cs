@@ -12,29 +12,11 @@ public class AuthController(AuthService authService) : ControllerBase
 {
     [HttpPost("registro")]
     public async Task<IActionResult> Registro([FromBody] RegistroRequest request, CancellationToken cancellationToken)
-    {
-        try
-        {
-            return Ok(await authService.RegistrarAsync(request, cancellationToken));
-        }
-        catch (Exception ex) when (ex is ArgumentException or InvalidOperationException)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
-    }
+        => Ok(await authService.RegistrarAsync(request, cancellationToken));
 
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest request, CancellationToken cancellationToken)
-    {
-        try
-        {
-            return Ok(await authService.LoginAsync(request, cancellationToken));
-        }
-        catch (UnauthorizedAccessException ex)
-        {
-            return Unauthorized(new { error = ex.Message });
-        }
-    }
+        => Ok(await authService.LoginAsync(request, cancellationToken));
 
     [HttpGet("me")]
     [Authorize]

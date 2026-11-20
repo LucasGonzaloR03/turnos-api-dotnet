@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: turnos-api
+    runtime: docker
+    plan: free
+    region: sa-east-1
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+      - key: Jwt__Key
+        sync: false
+      - key: Jwt__Issuer
+        value: TurnosAPI
+      - key: Jwt__Audience
+        value: TurnosClient
+      - key: Jwt__ExpiracionMinutos
+        value: 60
